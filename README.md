@@ -1,26 +1,10 @@
-# Edge Detection and Tracing with OpenCV
+# Computer Vision
 
-This project demonstrates various edge detection techniques using OpenCV in Python. It includes methods like Canny, Sobel, Laplacian, Prewitt, and Scharr for detecting edges in images. The project also provides functionality to trace these edges and visualize them.
-
-## Features
-
-- **Edge Detection Methods**:
-
-  - Canny
-  - Sobel
-  - Laplacian
-  - Prewitt
-  - Scharr
-
-- **Edge Tracing**:
-  - Detects and traces edges in an image and visualizes them.
+This project is based on my studies for the CONL725 Artificial Intelligence module of the MSc Computer Science with Artificial Intelligence course that I am studying at Wrexham Glyndwr University.
 
 ## Prerequisites
 
-- Python 3.x
-- OpenCV
-- NumPy
-- dotenv (for environment variable management)
+- Python 3.8+
 
 ## Installation
 
@@ -33,7 +17,7 @@ This project demonstrates various edge detection techniques using OpenCV in Pyth
 
 2. Create a virtual environment and activate it:
 
-On Mac
+On Mac or Linux
 
 ```bash
 python -m venv .venv

@@ -1,10 +1,11 @@
 import cv2
 import numpy as np
-import json
+from dotenv import load_dotenv
+import os
 
-with open('config.json') as config_file:
-       config = json.load(config_file)
-       image_directory = config['image_directory']
+load_dotenv()
+
+image_directory = os.getenv('IMAGE_DIR')
 
 def edge_detection(blurred_image:any, detection_method:str = "canny") -> np.ndarray:
     if detection_method == "canny":
@@ -72,9 +73,9 @@ def edge_trace(image_path, detection_method:str = "canny"):
         print(f"An error occurred: {e}")
         return None
 
-# Example usage
+image_path = "cross_jane.jpg"
+image_path = f"{image_directory}/{image_path}"
 detection_method = "canny"
-image_path = f"{image_directory}/cross_jane.jpg"
 traced_img = edge_trace(image_path, detection_method)
 
 if traced_img is not None:
