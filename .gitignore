@@ -18,6 +18,3 @@ config.json
 
 # Ignore .env
 .env
-
-# Ignore .gitignore
-.gitignore
