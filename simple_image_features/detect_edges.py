@@ -73,7 +73,7 @@ def edge_trace(image_path, detection_method:str = "canny"):
         print(f"An error occurred: {e}")
         return None
 
-image_path = "cross_jane.jpg"
+image_path = "mountains.jpg"
 image_path = f"{image_directory}/{image_path}"
 detection_method = "canny"
 traced_img = edge_trace(image_path, detection_method)
