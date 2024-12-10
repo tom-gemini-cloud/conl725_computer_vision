@@ -79,7 +79,15 @@ detection_method = "canny"
 traced_img = edge_trace(image_path, detection_method)
 
 if traced_img is not None:
-    # Display the image using standard OpenCV window
+    # Ensure the directory exists
+    output_directory = "traced_images"
+    if not os.path.exists(output_directory):
+        os.makedirs(output_directory)
+
+    # Save the image
+    traced_image_path = f"{output_directory}/trace_{detection_method}_{os.path.basename(image_path)}"
+    cv2.imwrite(traced_image_path, traced_img)
     cv2.imshow('Traced Image', traced_img)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
+    
