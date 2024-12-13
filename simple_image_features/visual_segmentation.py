@@ -8,7 +8,7 @@ load_dotenv()
 
 image_directory = os.getenv('IMAGE_DIR')
 
-def segment_and_view_image(image_path, n_segments=100):
+def segment_and_view_image(image_path, n_segments=100, compactness=10, sigma=2):
     """
     Segment an image using SLIC superpixels and display both original and segmented images.
     
@@ -24,7 +24,7 @@ def segment_and_view_image(image_path, n_segments=100):
         img = img.astype('float') / 255
 
     # Apply SLIC segmentation
-    segments = segmentation.slic(img, n_segments=n_segments, compactness=10, sigma=1)
+    segments = segmentation.slic(img, n_segments=n_segments, compactness=compactness, sigma=sigma)
     
     # Create segmented image
     segmented_img = color.label2rgb(segments, img, kind='avg')
@@ -37,7 +37,7 @@ def segment_and_view_image(image_path, n_segments=100):
     ax1.axis('off')
     
     ax2.imshow(segmented_img)
-    ax2.set_title(f'Segmented Image ({n_segments} segments)')
+    ax2.set_title(f'Segmented Image ({n_segments} segments. Compactness: {compactness}, Sigma: {sigma})')
     ax2.axis('off')
     
     plt.tight_layout()
@@ -47,4 +47,4 @@ def segment_and_view_image(image_path, n_segments=100):
 if __name__ == "__main__":
     image_path = "cross_jane.jpg"
     image_path = f"{image_directory}/{image_path}"
-    segment_and_view_image(image_path, n_segments=80)
+    segment_and_view_image(image_path, n_segments=150, compactness=20, sigma=3)
