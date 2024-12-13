@@ -45,6 +45,15 @@ def segment_and_view_image(image_path, n_segments=100, compactness=10, sigma=2):
 
 
 if __name__ == "__main__":
-    image_path = "cross_jane.jpg"
-    image_path = f"{image_directory}/{image_path}"
-    segment_and_view_image(image_path, n_segments=150, compactness=20, sigma=3)
+    image_name = "den_and_yabby.jpg"
+    image_path = f"{image_directory}/{image_name}"
+    
+    # Add error checking for image path and loading
+    if not os.path.exists(image_path):
+        print(f"Error: Image not found at {image_path}")
+        exit(1)
+        
+    try:
+        segment_and_view_image(image_path, n_segments=150, compactness=20, sigma=3)
+    except Exception as e:
+        print(f"Error processing image: {str(e)}")
