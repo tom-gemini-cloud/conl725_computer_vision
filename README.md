@@ -1,6 +1,6 @@
 # Computer Vision
 
-This project is based on my studies for the CONL725 Artificial Intelligence module of the MSc Computer Science with Artificial Intelligence course that I am studying at Wrexham Glyndwr University.
+This project is based on my studies for the CONL725 Computer Vision module of the MSc Computer Science with Artificial Intelligence course that I am studying at Wrexham Glyndwr University.
 
 ## Prerequisites
 
